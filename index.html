@@ -16,7 +16,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Caveat:wght@500;600;700&amp;display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <style>
   html { scroll-behavior: smooth; }
   body { margin: 0; background: var(--color-bg); color: var(--color-text);
@@ -101,24 +100,10 @@
         </ul>
       
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
-      <figure style="position: relative; margin: 0; padding: 10px 10px 26px; border-radius: 14px; box-shadow: 0 1px 0 var(--color-neutral-300), 0 6px 16px color-mix(in srgb, var(--color-text) 10%, transparent); background-color: var(--color-accent-2-400); border-width: 1px; border-style: dotted; border-color: var(--color-accent-800)">
-        <span class="grayscale" style="display: block; border-radius: 8px; overflow: hidden"><image-slot id="astar-room" shape="rect" style="width: 100%; aspect-ratio: 1 / 1" placeholder="Drop a photo of the space"></image-slot></span>
-        <button type="button" onClick="{{ zoomA }}" aria-label="View this photo full size" style="position: absolute; right: 8px; bottom: 8px; z-index: 2; background: var(--color-bg); border: 1.5px solid var(--color-text); color: var(--color-text); font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px; cursor: pointer" style-hover="background: var(--color-accent-2-300); border-color: var(--color-accent-800); color: var(--color-accent-800)">Expand</button>
-      </figure>
-      <figure style="position: relative; margin: 0; padding: 10px 10px 26px; border-radius: 14px; background: #fbfaf9; box-shadow: 0 1px 0 var(--color-neutral-300), 0 6px 16px color-mix(in srgb, var(--color-text) 10%, transparent); border-width: 1px; border-style: double; border-color: var(--color-accent-800)">
-        <span class="grayscale" style="display: block; border-radius: 8px; overflow: hidden"><image-slot id="astar-room-2" shape="rect" style="width: 100%; aspect-ratio: 1 / 1" placeholder="Drop a photo"></image-slot></span>
-        <button type="button" onClick="{{ zoomB }}" aria-label="View this photo full size" style="position: absolute; right: 8px; bottom: 8px; z-index: 2; background: var(--color-bg); border: 1.5px solid var(--color-text); color: var(--color-text); font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px; cursor: pointer" style-hover="background: var(--color-accent-2-300); border-color: var(--color-accent-800); color: var(--color-accent-800)">Expand</button>
-      </figure>
-      <figure style="position: relative; margin: 0; padding: 10px 10px 26px; border-radius: 14px; background: #fbfaf9; box-shadow: 0 1px 0 var(--color-neutral-300), 0 6px 16px color-mix(in srgb, var(--color-text) 10%, transparent); border-width: 1px; border-style: double; border-color: var(--color-accent-800)">
-        <span class="grayscale" style="display: block; border-radius: 8px; overflow: hidden"><image-slot id="astar-room-3" shape="rect" style="width: 100%; aspect-ratio: 1 / 1" placeholder="Drop a photo"></image-slot></span>
-        <button type="button" onClick="{{ zoomC }}" aria-label="View this photo full size" style="position: absolute; right: 8px; bottom: 8px; z-index: 2; background: var(--color-bg); border: 1.5px solid var(--color-text); color: var(--color-text); font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px; cursor: pointer" style-hover="background: var(--color-accent-2-300); border-color: var(--color-accent-800); color: var(--color-accent-800)">Expand</button>
-      </figure>
-      <figure style="position: relative; margin: 0; padding: 10px 10px 26px; border-radius: 14px; box-shadow: 0 1px 0 var(--color-neutral-300), 0 6px 16px color-mix(in srgb, var(--color-text) 10%, transparent); background-color: var(--color-accent-800); border-width: 1px; border-style: dotted; border-color: var(--color-accent-2-300)">
-        <span class="grayscale" style="display: block; border-radius: 8px; overflow: hidden"><image-slot id="astar-room-4" shape="rect" style="width: 100%; aspect-ratio: 1 / 1" placeholder="Drop a photo"></image-slot></span>
-        <button type="button" onClick="{{ zoomD }}" aria-label="View this photo full size" style="position: absolute; right: 8px; bottom: 8px; z-index: 2; background: var(--color-bg); border: 1.5px solid var(--color-text); color: var(--color-text); font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px; cursor: pointer" style-hover="background: var(--color-accent-2-300); border-color: var(--color-accent-800); color: var(--color-accent-800)">Expand</button>
-      </figure>
-    </div>
+    <figure style="position: relative; margin: 0">
+      <span class="grayscale" style="display: block"><img id="astar-room" alt="Astar Studio — the warehouse dressed for an event" src="assets/W2.png" style="width: 430px; height: 514px; display: block"></span>
+      <button type="button" onClick="{{ zoomA }}" style="position: absolute; right: 86px; bottom: -7px; z-index: 2; background: var(--color-bg); border: 1.5px solid var(--color-text); color: var(--color-text); font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 9px; cursor: pointer" style-hover="background: var(--color-accent-2-300); border-color: var(--color-accent-800); color: var(--color-accent-800)">Click to expnad</button>
+    </figure>
   </section><div style="overflow: hidden; margin: 5px 0; border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); padding: 10px 0"><div class="astar-marquee-track" style="display: flex; width: max-content; animation: astar-marquee 26s linear infinite"><span style="font-style: normal; font-weight: 400; color: var(--color-accent-800); text-transform: uppercase; padding-right: 48px; white-space: nowrap">Connect ✿  Create  ✿ Celebrate ✿</span><span style="font-style: normal; font-weight: 400; color: var(--color-accent-800); text-transform: uppercase; padding-right: 48px; white-space: nowrap">Connect ✿  Create  ✿ Celebrate ✿</span><span style="font-style: normal; font-weight: 400; color: var(--color-accent-800); text-transform: uppercase; padding-right: 48px; white-space: nowrap">Connect ✿  Create  ✿ Celebrate ✿</span><span style="font-style: normal; font-weight: 400; color: var(--color-accent-800); text-transform: uppercase; padding-right: 48px; white-space: nowrap">Connect ✿  Create  ✿ Celebrate ✿</span><span style="font-style: normal; font-weight: 400; color: var(--color-accent-800); text-transform: uppercase; padding-right: 48px; white-space: nowrap">Connect ✿  Create  ✿ Celebrate ✿</span><span style="font-style: normal; font-weight: 400; color: var(--color-accent-800); text-transform: uppercase; padding-right: 48px; white-space: nowrap">Connect ✿  Create  ✿ Celebrate ✿</span></div></div>
 
   <section id="uses" style="border-top: 2px solid var(--color-divider); padding: 56px 0 64px">
@@ -305,8 +290,8 @@ class Component extends DCLogic {
   state = { termsOpen: false, complaintsOpen: false, photoSrc: "" };
   _zoom(id) {
     const el = document.getElementById(id);
-    const img = el && el.shadowRoot && el.shadowRoot.querySelector(".frame img");
-    const src = img && img.getAttribute("src");
+    const inner = el && el.shadowRoot && el.shadowRoot.querySelector(".frame img");
+    const src = el && el.tagName === "IMG" ? el.getAttribute("src") : (inner && inner.getAttribute("src"));
     if (src) this.setState({ photoSrc: src });
   }
   componentDidMount() {
