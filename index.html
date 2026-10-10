@@ -49,6 +49,19 @@
   a { color: var(--color-accent-700); text-decoration: none; }
   a:hover { color: var(--color-accent-800); text-decoration: underline; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  @keyframes astar-note-swing {
+    0%, 62%, 100% { transform: rotate(1.2deg); }
+    68% { transform: rotate(4deg); }
+    74% { transform: rotate(-2.5deg); }
+    80% { transform: rotate(2.5deg); }
+    86% { transform: rotate(-1deg); }
+    92% { transform: rotate(1.6deg); }
+  }
+  @keyframes astar-hurry-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.14); opacity: 0.8; }
+  }
+  @media (prefers-reduced-motion: reduce) { .astar-note, .astar-hurry { animation: none !important; } }
   @keyframes astar-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes astar-bounce-in {
     0%   { transform: translateY(-38px); opacity: 0; }
@@ -64,7 +77,7 @@
 </helmet>
 
 <nav class="nav" style="padding-inline: max(24px, calc((100% - 1160px) / 2 + 24px)); gap: 24px; flex-wrap: wrap; border-bottom: 2px solid var(--color-divider)">
-  <span class="nav-brand" style="display: flex; align-items: center; gap: 14px; padding: 6px 0"><img src="/assets/astar-mark.png" alt="" style="height: 45px; width: 67px; object-fit: contain; display: block"><span style="display: block"><span style="display: block; font-family: var(--font-heading); font-weight: 700; font-size: 24px; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text)">Astar</span><span style="display: flex; align-items: center; gap: 6px; margin-top: 4px"><span style="width: 14px; height: 1.5px; background: var(--color-accent-700)"></span><span style="font-family: var(--font-heading); font-weight: 600; font-size: 11px; line-height: 1; letter-spacing: 0.42em; text-transform: uppercase; color: var(--color-accent-700)">Studio</span><span style="flex: 1; height: 1.5px; background: var(--color-accent-700)"></span></span><span style="display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700); margin-top: 5px">CONNECT<span style="color: var(--color-accent-700);">·</span> CREATE&nbsp;<span style="color: var(--color-accent-700);">·</span> CELEBRATE</span></span></span>
+  <span class="nav-brand" style="display: flex; align-items: center; gap: 14px; padding: 6px 0"><img src="assets/astar-mark.png" alt="" style="height: 45px; width: 67px; object-fit: contain; display: block"><span style="display: block"><span style="display: block; font-family: var(--font-heading); font-weight: 700; font-size: 24px; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text)">Astar</span><span style="display: flex; align-items: center; gap: 6px; margin-top: 4px"><span style="width: 14px; height: 1.5px; background: var(--color-accent-700)"></span><span style="font-family: var(--font-heading); font-weight: 600; font-size: 11px; line-height: 1; letter-spacing: 0.42em; text-transform: uppercase; color: var(--color-accent-700)">Studio</span><span style="flex: 1; height: 1.5px; background: var(--color-accent-700)"></span></span><span style="display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700); margin-top: 5px">CONNECT<span style="color: var(--color-accent-700);">·</span> CREATE&nbsp;<span style="color: var(--color-accent-700);">·</span> CELEBRATE</span></span></span>
   <a href="#space" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap">The space</a>
   <a href="#uses" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap">What it's for</a>
   <a href="#pricing" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap">Pricing</a>
@@ -79,8 +92,11 @@
     <h1 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(40px, 5.8vw, 76px); line-height: 1.02; letter-spacing: -0.03em; margin: 0; text-wrap: balance">
       <span class="astar-bounce" style="display: block; animation: astar-bounce-in 1.15s cubic-bezier(0.28, 0.84, 0.42, 1) both">Flexible Event Venue for Hire</span>
       <span class="astar-bounce" style="display: block; animation: astar-bounce-in 1.15s cubic-bezier(0.28, 0.84, 0.42, 1) 0.16s both">in Western Melbourne</span>
-    </h1>
+    </h1>    
     <p class="hero-tagline" style="font-family: var(--font-heading); font-weight: 700; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.2; letter-spacing: -0.01em; color: var(--color-accent-700); margin: 24px 0 0">Bring your idea. We'll bring the space.</p>
+    <aside class="astar-note" style="position: relative; float: right; width: min(300px, 100%); margin: 20px 0 16px 32px; padding: 34px 24px 24px; background: var(--color-accent-2-200); box-shadow: var(--shadow-lg); transform: rotate(1.2deg); transform-origin: 50% 0; animation: astar-note-swing 6s ease-in-out infinite">
+      <span aria-hidden="true" style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 44px; line-height: 1">📌</span><p class="astar-hurry" style="margin: 0; font-family: 'Caveat', cursive; font-weight: 700; font-size: 28px; line-height: 32px; text-align: center; color: var(--color-accent-800); animation: astar-hurry-pulse 1.6s ease-in-out infinite">HURRY!</p><p style="margin: 0; font-family: 'Caveat', cursive; font-weight: 700; font-size: 28px; line-height: 32px; text-align: center; color: var(--color-accent-800)">Special discounted price for first 13 bookings</p><p style="margin: 10px 0 0; text-align: center"><a href="#enquire" style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 24px; line-height: 28px; color: var(--color-accent-700); text-decoration: underline" style-hover="color: var(--color-accent-900)">Ask Us →</a></p>
+    </aside>
     <p style="font-size: 18px; line-height: 28px; max-width: 60ch; margin: 20px 0 0">We are located in Truganina and have built this space to stay out of your way. It's a blank canvas — no fixed theme, no house style — so whatever you bring in becomes the space for the day. Birthday, baby shower, hens do, corporate events or just your favourite people in one room — we want to help you make it feel like you.</p>
     <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px">
       <a href="tel:+0426781313" class="btn btn-secondary" style="text-decoration: none; color: var(--color-accent-700)" style-hover="background: color-mix(in srgb, var(--color-accent-700) 12%, transparent); border-color: var(--color-accent-700)">Call 0426 781 313 📞</a>
