@@ -81,6 +81,7 @@
   <a href="#space" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap">The space</a>
   <a href="#uses" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap">What it's for</a>
   <a href="#pricing" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap">Pricing</a>
+  <button type="button" onClick="{{ openFaq }}" style="background: none; border: 0; padding: 0; font-family: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; color: var(--color-accent-700); cursor: pointer" style-hover="color: var(--color-accent-800); text-decoration: underline">FAQ</button>
   <a href="#enquire" class="btn" style="text-decoration: none; background: var(--color-accent-2-300); color: var(--color-accent-800); border-color: var(--color-accent-2-300)">ENQUIRE</a>
 </nav>
 
@@ -194,63 +195,45 @@
 
 
   <section id="pricing" style="border-top: 2px solid var(--color-divider); padding: 56px 0 64px">
+    <div style="display: flex; flex-wrap: wrap; gap: 40px 0; align-items: stretch">
+      <div style="flex: 3 1 420px; min-width: 0; padding-right: clamp(24px, 4vw, 64px)">
     <span style="display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">╰┈➤Pricing</span>
-    <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -0.02em; margin: 16px 0 0">Simple, upfront pricing</h2>
-    <p style="font-size: 16px; line-height: 26px; margin: 20px 0 40px; max-width: 50ch; color: var(--color-neutral-800)">One flat price for the full day — 24 hours of the space, whichever package you choose.</p>
+    <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -0.02em; margin: 16px 0 0">Flexible Packages That Fit</h2>
+    <p style="font-size: 16px; line-height: 26px; margin: 24px 0 0; max-width: 62ch; color: var(--color-neutral-800)">Book the space for a full day at one flat price, or by the hour for shorter sessions.</p>
+    <p style="font-size: 16px; line-height: 26px; margin: 16px 0 0; max-width: 62ch; color: var(--color-neutral-800)">Free street parking is available for guests and vendors, with plenty of space nearby.</p>
+    <p style="font-size: 16px; line-height: 26px; margin: 16px 0 0; max-width: 62ch; color: var(--color-neutral-800)">Catering is available on request, with a wide range of halal, Hindu, vegan, gluten-free, and modern Australian menu options. If you prefer to bring your own food, we welcome BYO catering and non-alcoholic drinks.</p>
+    <p style="font-size: 16px; line-height: 26px; margin: 16px 0 0; max-width: 62ch; color: var(--color-neutral-800)">You are welcome to bring your own decorations, DJ, and music equipment.</p>
+    <p style="font-size: 14px; line-height: 22px; margin: 24px 0 0; color: var(--color-neutral-700)">Check <button type="button" onClick="{{ openTerms }}" style="display: inline; text-decoration-line: underline; background: none; border: 0; padding: 0; font-family: inherit; font-size: inherit; font-weight: 600; color: var(--color-accent-700); cursor: pointer" style-hover="color: var(--color-accent-800)">T&amp;C</button> for more info</p>
+    <div style="margin-top: 28px"><a href="tel:+61426781313" class="btn btn-secondary" style="text-decoration: none; color: var(--color-accent-700)" style-hover="background: color-mix(in srgb, var(--color-accent-700) 12%, transparent); border-color: var(--color-accent-700)">Call 04XX XXX XXX 📞</a></div>
 
-    <sc-if value="{{ cardLayout }}" hint-placeholder-val="{{ true }}">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2px; background: var(--color-divider)">
-      <div style="background: var(--color-bg); padding: 24px 24px 32px 0; display: flex; flex-direction: column; gap: 14px">
-        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #209014">Package 01</span>
-        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 60px; line-height: 56px; letter-spacing: -0.04em">$499</span>
-        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: -0.01em; margin: 0">Clean As You Go</h3>
-        <p style="font-size: 15px; line-height: 23px; margin: 0; color: var(--color-neutral-800)">You handle the clean-up before you head off.</p>
+
+  
       </div>
-      <div style="background: var(--color-bg); padding: 24px 24px 32px; display: flex; flex-direction: column; gap: 14px">
-        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FA7C2A">Package 02</span>
-        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 60px; line-height: 56px; letter-spacing: -0.04em">$799</span>
-        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: -0.01em; margin: 0">Cleaning Included</h3>
-        <p style="font-size: 15px; line-height: 23px; margin: 0; color: var(--color-neutral-800)">Includes cleaning after your party.</p>
-      </div>
-      <div style="background: var(--color-bg); padding: 24px 24px 32px; display: flex; flex-direction: column; gap: 14px">
-        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent)">Package 03</span>
-        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 60px; line-height: 56px; letter-spacing: -0.04em">$999</span>
-        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: -0.01em; margin: 0">Cleaning &amp; Decorations</h3>
-        <p style="font-size: 15px; line-height: 23px; margin: 0; color: var(--color-neutral-800)">Includes cleaning after your party and party decorations.</p>
+      <div style="flex: 2 1 320px; min-width: 0; border-left: 2px solid var(--color-divider); padding-left: clamp(24px, 4vw, 64px)">
+        <span aria-hidden="true" style="display: block; height: 24px"></span>
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -0.02em; margin: 16px 0 24px">A simple 4-step</h3>
+        <a href="#enquire" style="border: 2px solid var(--color-accent-700); padding: 7px 14px; display: flex; align-items: baseline; gap: 12px; width: 50%; min-width: 220px; text-decoration: none; cursor: pointer; color: #FFC4B9; background-color: #FFC4B9; border-color: var(--color-accent-2-100)" style-hover="background: #FFE3DD; border-color: #FFE3DD">
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4D170E">01</span>
+          <span style="font-size: 16px; line-height: 26px; font-weight: 600; color: #4D170E">📩 Enquire</span>
+        </a>
+        <div aria-hidden="true" style="display: flex; justify-content: flex-start; padding: 2px 0 2px 16px; color: var(--color-accent-700)"><svg viewBox="0 0 24 40" width="12" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2v34M3 27l9 10 9-10"></path></svg></div>
+        <div style="background: var(--color-bg); border: 2px solid var(--color-divider); padding: 7px 14px; display: flex; align-items: baseline; gap: 12px; width: 50%; min-width: 220px">
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">02</span>
+          <span style="font-size: 16px; line-height: 26px; font-weight: 600; color: var(--color-neutral-800)">📅 Confirm Date</span>
+        </div>
+        <div aria-hidden="true" style="display: flex; justify-content: flex-start; padding: 2px 0 2px 16px; color: var(--color-accent-700)"><svg viewBox="0 0 24 40" width="12" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2v34M3 27l9 10 9-10"></path></svg></div>
+        <div style="background: var(--color-bg); border: 2px solid var(--color-divider); padding: 7px 14px; display: flex; align-items: baseline; gap: 12px; width: 50%; min-width: 220px">
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">03</span>
+          <span style="font-size: 16px; line-height: 26px; font-weight: 600; color: var(--color-neutral-800)">💳 Pay Deposit</span>
+        </div>
+        <div aria-hidden="true" style="display: flex; justify-content: flex-start; padding: 2px 0 2px 16px; color: var(--color-accent-700)"><svg viewBox="0 0 24 40" width="12" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2v34M3 27l9 10 9-10"></path></svg></div>
+        <div style="background: var(--color-bg); border: 2px solid var(--color-divider); padding: 7px 14px; display: flex; align-items: baseline; gap: 12px; width: 50%; min-width: 220px">
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">04</span>
+          <span style="font-size: 16px; line-height: 26px; font-weight: 600; color: var(--color-neutral-800)">🎉 Host Your Event</span>
+        </div>
       </div>
     </div>
-    </sc-if>
-
-    <sc-if value="{{ tableLayout }}" hint-placeholder-val="{{ false }}">
-    <table class="table" style="table-layout: fixed; width: 100%">
-      
-      <thead>
-        <tr>
-          <th scope="col" style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 24px 12px 0; color: var(--color-neutral-700)">Price</th>
-          <th scope="col" style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 24px 12px 0; color: var(--color-neutral-700)">Package</th>
-          <th scope="col" style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 0; color: var(--color-neutral-700)">Includes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 16px 24px 16px 0; font-family: var(--font-heading); font-weight: 800; font-size: 30px; line-height: 34px; letter-spacing: -0.03em; vertical-align: middle">$250</td>
-          <td style="padding: 16px 24px 16px 0; font-size: 15px; line-height: 23px; vertical-align: middle">Clean As You Go</td>
-          <td style="padding: 16px 0; font-size: 15px; line-height: 23px; vertical-align: middle; color: var(--color-neutral-800)">You handle the clean-up before you head off.</td>
-        </tr>
-        <tr>
-          <td style="padding: 16px 24px 16px 0; font-family: var(--font-heading); font-weight: 800; font-size: 30px; line-height: 34px; letter-spacing: -0.03em; vertical-align: middle">$500</td>
-          <td style="padding: 16px 24px 16px 0; font-size: 15px; line-height: 23px; vertical-align: middle">Cleaning Included</td>
-          <td style="padding: 16px 0; font-size: 15px; line-height: 23px; vertical-align: middle; color: var(--color-neutral-800)">Includes cleaning after your party.</td>
-        </tr>
-        <tr>
-          <td style="padding: 16px 24px 16px 0; font-family: var(--font-heading); font-weight: 800; font-size: 30px; line-height: 34px; letter-spacing: -0.03em; vertical-align: middle; border-bottom: 0">$800</td>
-          <td style="padding: 16px 24px 16px 0; font-size: 15px; line-height: 23px; vertical-align: middle; border-bottom: 0">Cleaning &amp; Decorations</td>
-          <td style="padding: 16px 0; font-size: 15px; line-height: 23px; vertical-align: middle; border-bottom: 0; color: var(--color-neutral-800)">Includes cleaning after your party and party decorations.</td>
-        </tr>
-      </tbody>
-    </table>
-    </sc-if>
-  </section>
+    </section>
 
   
 
@@ -276,8 +259,10 @@
     <a href="#space" style="text-decoration-line: underline; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-800)" style-hover="color: var(--color-accent-900)">The Space</a>
     <a href="#uses" style="text-decoration-line: underline; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-800)" style-hover="color: var(--color-accent-900)">What it's for</a>
     <a href="#pricing" style="text-decoration-line: underline; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-800)" style-hover="color: var(--color-accent-900)">Pricing</a>
-    <button type="button" onClick="{{ openTerms }}" style="display: inline-block; text-decoration-line: underline; background: none; border: 0; padding: 0; font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-800); cursor: pointer" style-hover="color: var(--color-accent-900)">Terms, Conditions and Privacy Policy</button>
+    <button type="button" onClick="{{ openTerms }}" style="display: inline-block; text-decoration-line: underline; background: none; border: 0; padding: 0; font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-800); cursor: pointer" style-hover="color: var(--color-accent-900)">Terms &amp; Conditions</button>
+    <button type="button" onClick="{{ openFaq }}" style="display: inline-block; text-decoration-line: underline; background: none; border: 0; padding: 0; font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-800); cursor: pointer" style-hover="color: var(--color-accent-900)">FAQ</button>
     <button type="button" onClick="{{ openComplaints }}" style="display: inline-block; text-decoration-line: underline; background: none; border: 0; padding: 0; font-family: inherit; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-800); cursor: pointer" style-hover="color: var(--color-accent-900)">Complaints</button>
+    <a href="https://g.page/r/CRkOVwG2ZNeNEAI/review" target="_blank" rel="noopener" style="text-decoration-line: underline; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-800)" style-hover="color: var(--color-accent-900)">Review Us</a>
     </div>
   </section><div style="overflow: hidden; border-top: 2px solid var(--color-divider); padding: 10px 0; margin-top: 0"><div class="astar-marquee-track" style="display: flex; width: max-content; animation: astar-marquee 90s linear infinite"><span style="font-size: 11px; line-height: 18px; letter-spacing: 0.04em; color: var(--color-neutral-700); padding-right: 64px; white-space: nowrap">ꕤ ASTAR STUDIO acknowledges the Traditional Custodians of the lands on where we work, live, and conduct business across Australia. We pay our respects to Elders past and present ꕤ</span><span style="font-size: 11px; line-height: 18px; letter-spacing: 0.04em; color: var(--color-neutral-700); padding-right: 64px; white-space: nowrap">ꕤ ASTAR STUDIO acknowledges the Traditional Custodians of the lands on where we work, live, and conduct business across Australia. We pay our respects to Elders past and present ꕤ</span></div></div><footer style="padding: 10px 0 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; justify-content: space-between; font-size: 13px; line-height: 22px; color: var(--color-neutral-700)">
     <img src="assets/astar-logo-v2.png" alt="Astar Studio — connect, create, celebrate" style="height: 104px; display: block; width: 108px; object-fit: contain">
@@ -298,19 +283,154 @@
       <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; margin: 0">Terms, Conditions and Privacy Policy</h2>
       <button type="button" onClick="{{ closeTerms }}" aria-label="Close" style="background: none; border: 0; padding: 4px; margin: -4px -4px 0 0; font-family: var(--font-heading); font-size: 22px; line-height: 1; color: var(--color-text); cursor: pointer" style-hover="color: var(--color-accent-700)">×</button>
     </div>
-    <ol style="margin: 24px 0 0; padding: 0 0 0 22px; display: grid; gap: 14px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
-      <li>We do not collect any personal information when you use our Website. We do not use cookies or similar tracking technologies on our Website./li>
-      <li>The venue is under 24/7 surveillance.</li>
-      <li>Alcohol use is prohibited unless approved in advance by the owner.</li>
-      <li>Loud music after hours must be kept under control.</li>
-      <li>Any damage to the property and included products will be assessed and added as an additional cost.</li>
-      <li>We take no responsibility for anyone — adults or kids — hurt on the premises during the party.</li>
-      <li>This is a self-hosted venue. Owner presence during your party is available on request only — we'll do our best, but it isn't guaranteed.</li>
-      <li>Customers must report any incident or accident immediately to the owner, or call 000.</li>
-      <li>Cancellation &amp; Refund Policy — Cancel more than 24 hours before your event and receive a full refund. Cancellations made within 24 hours of the event date are eligible for a 50% refund. Failure to attend your event without notice will not be eligible for a refund.</li>
-    </ol>
+    <div style="margin-top: 24px">
+      <section style="margin-top: 0px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 0px; color: var(--color-text)">Venue Usage</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>The booking period includes both setup and pack-down time.</li>
+          <li>This is a self-hosted venue.</li>
+          <li>Owner attendance during your event is available by prior arrangement only and cannot be guaranteed.</li>
+          <li>Access to the upper floor is available only with prior approval and where included in your booking.</li>
+          <li>The ground floor of the venue is currently not air-conditioned.</li>
+        </ul>
+      </section>
+      <section style="margin-top: 24px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 14px; border-top: 1px solid var(--color-divider); color: var(--color-text)">Guest Responsibilities</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>The hirer is responsible for the conduct and safety of all guests attending the event.</li>
+          <li>Children must be supervised by a responsible adult at all times.</li>
+          <li>Guests attend and use the venue at their own risk.</li>
+          <li>Any incident, accident, damage, or safety concern must be reported to the venue owner immediately. In emergencies, please contact 000.</li>
+          <li>At the conclusion of the event, the venue must be vacated in a clean and tidy condition, substantially the same as it was provided. This includes the removal of all rubbish, decorations, and personal items brought onto the premises.</li>
+        </ul>
+      </section>
+      <section style="margin-top: 24px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 14px; border-top: 1px solid var(--color-divider); color: var(--color-text)">Safety &amp; Security</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>The venue is monitored by 24/7 security surveillance.</li>
+          <li>Smoking is permitted only in designated outdoor areas. The venue operates a strict no-smoking policy indoors.</li>
+          <li>Pets are not permitted on the premises.</li>
+        </ul>
+      </section>
+      <section style="margin-top: 24px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 14px; border-top: 1px solid var(--color-divider); color: var(--color-text)">Food, Beverages &amp; Entertainment</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>BYO alcohol is permitted only with prior approval and must be confirmed as part of your booking.</li>
+          <li>External catering is welcome.</li>
+          <li>Guests may bring their own decorations, DJ, and music equipment.</li>
+          <li>Mirrors, decorative lighting, and selected décor items may be available upon request and subject to approval.</li>
+        </ul>
+      </section>
+      <section style="margin-top: 24px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 14px; border-top: 1px solid var(--color-divider); color: var(--color-text)">Noise &amp; Behaviour</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>There are currently no specific noise restrictions; however, excessive noise and loud music, particularly outside normal operating hours, must be kept to a reasonable level.</li>
+          <li>The venue reserves the right to request a reduction in noise levels where required to avoid disturbance to neighbouring properties.</li>
+        </ul>
+      </section>
+      <section style="margin-top: 24px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 14px; border-top: 1px solid var(--color-divider); color: var(--color-text)">Parking</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>A limited number of on-site parking spaces are available.</li>
+          <li>Guests attending larger events may be required to use the free street parking available in the surrounding area.</li>
+        </ul>
+      </section>
+      <section style="margin-top: 24px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 14px; border-top: 1px solid var(--color-divider); color: var(--color-text)">Damage &amp; Liability</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>Any damage to the venue, fixtures, equipment, furniture, or other provided items will be assessed and charged to the hirer accordingly.</li>
+          <li>The venue owner accepts no liability for injury, loss, theft, or damage sustained by guests, except where required by applicable Australian law.</li>
+        </ul>
+      </section>
+      <section style="margin-top: 24px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 14px; border-top: 1px solid var(--color-divider); color: var(--color-text)">Cancellation &amp; Refund Policy</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>A 24-hour grace period applies following booking confirmation, during which a full deposit refund is available.</li>
+          <li>The grace period does not apply to events scheduled to commence within 48 hours of booking.</li>
+          <li>Cancellations made more than 30 days before the event will receive a 100% refund.</li>
+          <li>Cancellations made between 30 days and 7 days before the event will receive a 50% refund.</li>
+          <li>Cancellations made within 7 days of the event are non-refundable.</li>
+        </ul>
+      </section>
+      <section style="margin-top: 24px">
+        <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 24px; letter-spacing: -0.01em; margin: 0; padding-top: 14px; border-top: 1px solid var(--color-divider); color: var(--color-text)">Privacy Policy</h3>
+        <ul style="margin: 10px 0 0; padding: 0 0 0 22px; display: grid; gap: 8px; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">
+          <li>We respect your privacy and are committed to protecting your personal information.</li>
+          <li>When you share booking request, we may collect information such as your name, email address, phone number, event details, and any other information you choose to provide.</li>
+          <li>We use this information solely to respond to enquiries, manage bookings, provide our services, and communicate with customers.</li>
+          <li>Your personal information will not be sold or shared with third parties except where required by law or where necessary to provide our services.</li>
+          <li>You may contact us at any time to request access to, correction of, or removal of your personal information where applicable.</li>
+          <li>We do not collect any personal information when you use our Website. We do not use cookies or similar tracking technologies on our Website.</li>
+        </ul>
+      </section>
+    </div>
     <div style="display: flex; justify-content: flex-start; margin-top: 32px">
       <button type="button" class="btn" onClick="{{ closeTerms }}" style="background: transparent; color: var(--color-accent-800); border-color: var(--color-accent-800)" style-hover="background: color-mix(in srgb, var(--color-accent-800) 14%, transparent)">Close</button>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ faqOpen }}" hint-placeholder-val="{{ false }}">
+<div class="dialog-backdrop" onClick="{{ closeFaq }}" style="position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; z-index: 50">
+  <div class="dialog" role="dialog" aria-modal="true" aria-label="Frequently asked questions" onClick="{{ stopClose }}" style="max-width: 640px; width: 100%; max-height: 86vh; overflow: auto; padding: 32px; background: var(--color-bg); border: 2px solid var(--color-text)">
+    <div style="display: flex; align-items: start; gap: 24px; justify-content: space-between">
+      <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; margin: 0">Frequently asked questions</h2>
+      <button type="button" onClick="{{ closeFaq }}" aria-label="Close" style="background: none; border: 0; padding: 4px; margin: -4px -4px 0 0; font-family: var(--font-heading); font-size: 22px; line-height: 1; color: var(--color-text); cursor: pointer" style-hover="color: var(--color-accent-700)">×</button>
+    </div>
+    <div style="margin-top: 24px">
+      <div style="padding: 16px 0; border-top: 2px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">How big is the venue?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">The venue offers 192 m² of event space, comprising 137 m² on the ground floor and a 55 m² mezzanine level— one open room with no partitions, plus an upstairs area for games and fun.</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">Where are you, and what's nearby?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">Situated near the prominent corner of Boundary Road and Fastline Drive in Truganina.
+          Accessible via the Boundary Rd/Robinsons Rd bus stop located approximately 1.1 kilometres away and Deer Park Station positioned 4.5 kilometres out. Also 7.1 kilometres from Tarneit Central Station to 
+          18/2 Fastline Road, which takes about 12 minutes to drive.The primary route goes via Dohertys Road (B94)</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">How many guests can the venue hold?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">Around 50 guests comfortably.</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">How long is the hire?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">Minimum of one hour to 24 hours (Full Day).</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">How far ahead do I need to book?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">At least 7 days before your event. The venue is bookable Monday to Sunday, anytime.</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">What's included?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">Tables and chairs, speakers and stage, kitchen facilities, toilets, on-site parking,first-aid kit.</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">Can we bring our own food and drinks?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">Yes, bring your own food. Alcohol is only allowed with the owner's approval in advance.</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">Can we decorate?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">Absolutely — The venue is a blank canvas that you can style to suit your event. Decorations are welcome; 
+          however, drilling, painting, or making permanent alterations is not permitted. If you need hanging points or special setup arrangements, please contact us and we'll do our best to assist.</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">Who cleans up?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">Event organiser is responsible that the venue must be vacated in a clean and tidy condition, substantially 
+          the same as it was provided. This includes the removal of all rubbish, decorations, and personal items brought onto the premises.</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">Will someone from Astar be on site?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">This is a self-hosted venue. Owner presence is available on request — we'll do our best, but it isn't guaranteed.</p>
+      </div>
+      <div style="padding: 16px 0; border-top: 1px solid var(--color-divider)">
+        <h3 style="font-family: var(--font-heading); font-weight: 700; font-size: 16px; line-height: 22px; margin: 0; color: var(--color-text)">What if I need to cancel?</h3>
+        <p style="margin: 6px 0 0; font-size: 15px; line-height: 23px; color: var(--color-neutral-800)">Please refer to the Terms and Condition on the Website</p>
+      </div>
+    </div>
+    <p style="margin: 20px 0 0; font-size: 14px; line-height: 22px; color: var(--color-neutral-700)">Still have a question? Call, WhatsApp or email us — details in the Book a date section.</p>
+    <div style="display: flex; justify-content: flex-start; margin-top: 24px">
+      <button type="button" class="btn" onClick="{{ closeFaq }}" style="background: transparent; color: var(--color-accent-800); border-color: var(--color-accent-800)" style-hover="background: color-mix(in srgb, var(--color-accent-800) 14%, transparent)">Close</button>
     </div>
   </div>
 </div>
@@ -361,6 +481,9 @@ class Component extends DCLogic {
       openTerms: () => this.setState({ termsOpen: true }),
       closeTerms: () => this.setState({ termsOpen: false }),
       stopClose: (e) => e.stopPropagation(),
+      faqOpen: this.state.faqOpen,
+      openFaq: () => this.setState({ faqOpen: true }),
+      closeFaq: () => this.setState({ faqOpen: false }),
       complaintsOpen: this.state.complaintsOpen,
       openComplaints: () => this.setState({ complaintsOpen: true }),
       closeComplaints: () => this.setState({ complaintsOpen: false }),
