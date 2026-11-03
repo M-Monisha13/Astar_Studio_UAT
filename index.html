@@ -524,7 +524,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;pricingLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;cards&quot;,&quot;table&quot;],&quot;default&quot;:&quot;cards&quot;,&quot;tsType&quot;:&quot;'cards' | 'table'&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;showSpecSheet&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
 class Component extends DCLogic {
-  state = { termsOpen: false, complaintsOpen: false, photoSrc: "" };
+  state = { termsOpen: false, complaintsOpen: false, faqOpen: false, photoSrc: "", copied: false };
   _zoom(id) {
     const el = document.getElementById(id);
     const inner = el && el.shadowRoot && el.shadowRoot.querySelector(".frame img");
@@ -532,7 +532,7 @@ class Component extends DCLogic {
     if (src) this.setState({ photoSrc: src });
   }
   componentDidMount() {
-    this._onKey = (e) => { if (e.key === "Escape") this.setState({ termsOpen: false, complaintsOpen: false, photoSrc: "" }); };
+    this._onKey = (e) => { if (e.key === "Escape") this.setState({ termsOpen: false, complaintsOpen: false, faqOpen: false, photoSrc: "" }); };
     document.addEventListener("keydown", this._onKey);
   }
   componentWillUnmount() { document.removeEventListener("keydown", this._onKey); }
@@ -543,6 +543,13 @@ class Component extends DCLogic {
       openTerms: () => this.setState({ termsOpen: true }),
       closeTerms: () => this.setState({ termsOpen: false }),
       stopClose: (e) => e.stopPropagation(),
+      copyLabel: this.state.copied ? "Copied ✓" : "Copy number",
+      copyNumber: () => {
+        const n = "0426 781 313";
+        const done = () => { this.setState({ copied: true }); setTimeout(() => this.setState({ copied: false }), 2000); };
+        if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(n).then(done, done); }
+        else { const t = document.createElement("textarea"); t.value = n; document.body.appendChild(t); t.select(); try { document.execCommand("copy"); } catch (e) {} document.body.removeChild(t); done(); }
+      },
       faqOpen: this.state.faqOpen,
       openFaq: () => this.setState({ faqOpen: true }),
       closeFaq: () => this.setState({ faqOpen: false }),
